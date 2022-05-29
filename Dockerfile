@@ -5,12 +5,14 @@ RUN apt-get update && apt-get install -y curl vim wget software-properties-commo
 
 RUN update-alternatives --install "/usr/bin/python" "python" "$(which python3)" 1
 RUN pip3 install findspark
+RUN pip3 install jupyterlab
 # Fix the value of PYTHONHASHSEED
 # Note: this is needed when you use Python 3.3 or greater
 ENV SPARK_VERSION=3.2.1 \
 HADOOP_VERSION=3.2 \
 SPARK_HOME=/opt/spark \
 PYTHONHASHSEED=1
+JUPYTER_ENABLE_LAB=yes
 
 RUN wget --no-verbose -O apache-spark.tgz "https://archive.apache.org/dist/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz" \
 && mkdir -p /opt/spark \
