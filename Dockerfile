@@ -2,7 +2,7 @@ FROM openjdk:11.0.11-jre-slim-buster as builder
 
 # Add Dependencies for PySpark
 RUN apt-get update && apt-get install -y curl vim wget software-properties-common ssh net-tools ca-certificates python3 python3-pip python3-numpy python3-matplotlib python3-scipy python3-pandas python3-simpy
-
+RUN apt-get -y install libpq-dev python-dev libxml2-dev libxslt1-dev libldap2-dev libsasl2-dev libffi-dev
 RUN update-alternatives --install "/usr/bin/python" "python" "$(which python3)" 1
 RUN pip3 install findspark
 RUN pip3 install jupyterlab
