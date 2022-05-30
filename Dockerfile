@@ -6,6 +6,7 @@ RUN apt-get -y install libpq-dev python-dev libxml2-dev libxslt1-dev libldap2-de
 RUN update-alternatives --install "/usr/bin/python" "python" "$(which python3)" 1
 RUN pip3 install findspark
 RUN pip3 install jupyterlab
+RUN pip3 install pyspark-kernel
 RUN mkdir -p /.local
 RUN chmod -R 777 /.local
 
