@@ -1,5 +1,5 @@
 #!/bin/bash
- usr/local/bin/jupyter notebook --config=/opt/spark-apps/notebook
+ usr/local/bin/jupyter notebook --config=/opt/spark-apps/notebook/config.py
 . "/opt/spark/bin/load-spark-env.sh"
 
 if [ "$SPARK_WORKLOAD" == "master" ];
