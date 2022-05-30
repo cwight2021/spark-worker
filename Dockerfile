@@ -7,6 +7,8 @@ RUN update-alternatives --install "/usr/bin/python" "python" "$(which python3)" 
 RUN pip3 install findspark
 RUN pip3 install jupyterlab==3.3.4
 RUN pip3 install pyspark-kernel
+RUN mkdir -p /.jupyter
+RUN chmod -R 777 /.jupyter
 RUN mkdir -p /.local
 RUN chmod -R 777 /.local
 
