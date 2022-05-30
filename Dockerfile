@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y curl vim wget software-properties-commo
 RUN apt-get -y install libpq-dev python-dev libxml2-dev libxslt1-dev libldap2-dev libsasl2-dev libffi-dev
 RUN update-alternatives --install "/usr/bin/python" "python" "$(which python3)" 1
 RUN pip3 install findspark
-RUN pip3 install jupyterlab==3.3.4
+RUN pip3 install jupyterlab==3.1.19
 RUN pip3 install pyspark-kernel
 RUN mkdir -p /.jupyter
 RUN chmod -R 777 /.jupyter
