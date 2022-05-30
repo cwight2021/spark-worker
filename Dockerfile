@@ -6,6 +6,9 @@ RUN apt-get -y install libpq-dev python-dev libxml2-dev libxslt1-dev libldap2-de
 RUN update-alternatives --install "/usr/bin/python" "python" "$(which python3)" 1
 RUN pip3 install findspark
 RUN pip3 install jupyterlab
+RUN mkdir -p /.local
+RUN chmod -R 777 /.local
+
 # Fix the value of PYTHONHASHSEED
 # Note: this is needed when you use Python 3.3 or greater
 ENV SPARK_VERSION=3.2.1 \
