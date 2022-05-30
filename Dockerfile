@@ -11,8 +11,8 @@ RUN pip3 install jupyterlab
 ENV SPARK_VERSION=3.2.1 \
 HADOOP_VERSION=3.2 \
 SPARK_HOME=/opt/spark \
-PYTHONHASHSEED=1
-JUPYTER_ENABLE_LAB=yes
+PYTHONHASHSEED=1 \
+EJUPYTER_ENABLE_LAB=yes
 
 RUN wget --no-verbose -O apache-spark.tgz "https://archive.apache.org/dist/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz" \
 && mkdir -p /opt/spark \
