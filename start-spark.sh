@@ -12,7 +12,7 @@ cd /opt/spark/bin && ./spark-class org.apache.spark.deploy.master.Master --ip $S
 elif [ "$SPARK_WORKLOAD" == "worker" ];
 then
 
-cd /opt/spark/bin && ./spark-class org.apache.spark.deploy.worker.Worker --webui-port $SPARK_WORKER_WEBUI_PORT $SPARK_MASTER >> $SPARK_WORKER_LOG
+cd /opt/spark/bin && ./spark-class org.apache.spark.deploy.worker.Worker --webui-port 8080  spark://10.128.0.144:7077
 
 elif [ "$SPARK_WORKLOAD" == "submit" ];
 then
