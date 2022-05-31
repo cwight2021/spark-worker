@@ -50,8 +50,8 @@ ln -sf /dev/stdout $SPARK_WORKER_LOG
 
 COPY .config.py /
 COPY start-spark.sh /
-
+COPY start-worker.sh
 CMD ["/bin/bash", "/start-spark.sh"]
-CMD ["/bin/bash", "/start-workers.sh"]
+CMD ["/bin/bash", "/start-worker.sh"]
 
 
