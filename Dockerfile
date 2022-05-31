@@ -41,7 +41,7 @@ SPARK_MASTER="spark://spark-master:7077" \
 SPARK_WORKLOAD="master"
 
 EXPOSE 8888 8080 7077 7000
-
+RUN mkdir -p /opt/spark/work
 RUN mkdir -p $SPARK_LOG_DIR && \
 touch $SPARK_MASTER_LOG && \
 touch $SPARK_WORKER_LOG && \
