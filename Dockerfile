@@ -5,7 +5,6 @@ RUN apt-get update && apt-get install -y curl vim wget software-properties-commo
 RUN apt-get -y install libpq-dev python-dev libxml2-dev libxslt1-dev libldap2-dev libsasl2-dev libffi-dev
 RUN update-alternatives --install "/usr/bin/python" "python" "$(which python3)" 1
 RUN pip3 install findspark
-RUN pip3 install jupyterlab
 RUN pip3 install pyspark-kernel
 RUN mkdir -p /.jupyter
 RUN chmod -R 777 /.jupyter
@@ -38,7 +37,7 @@ SPARK_WORKER_LOG=/opt/spark/logs/spark-worker.out \
 SPARK_WORKER_WEBUI_PORT=8080 \
 SPARK_WORKER_PORT=7000 \
 SPARK_MASTER="spark://spark-master:7077" \
-SPARK_WORKLOAD="master"
+SPARK_WORKLOAD="worker"
 
 EXPOSE 8888 8080 7077 7000
 RUN mkdir -p /opt/spark/work
@@ -52,6 +51,3 @@ COPY .config.py /
 COPY start-spark.sh /
 COPY start-worker.sh /
 CMD ["/bin/bash", "/start-spark.sh"]
-CMD ["/bin/bash", "/start-worker.sh"]
-
-
