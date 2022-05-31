@@ -6,8 +6,6 @@ if [ "$SPARK_WORKLOAD" == "master" ];
 then
 
 export SPARK_MASTER_HOST=`hostname`
-export worker1=9091
-export worker2=9092
 
 cd /opt/spark/bin && ./spark-class org.apache.spark.deploy.master.Master --ip $SPARK_MASTER_HOST --port $SPARK_MASTER_PORT --webui-port $SPARK_MASTER_WEBUI_PORT >> $SPARK_MASTER_LOG
 
