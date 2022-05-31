@@ -52,3 +52,6 @@ COPY .config.py /
 COPY start-spark.sh /
 
 CMD ["/bin/bash", "/start-spark.sh"]
+CMD ["/bin/bash", "/start-workers1.sh"]
+CMD ["/bin/bash", "/start-workers2.sh"]
+
